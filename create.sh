@@ -33,4 +33,10 @@ function create_srv {
     done
 }
 
+function remove_srv {
+    for ((i=1;i<=$NUM;i++)) do
+	docker service rm nice_$i
+    done
+}
+
 $CMD

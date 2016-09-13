@@ -25,4 +25,12 @@ function remove {
     done
 }
 
+function create_srv {
+    for ((i=1;i<=$NUM;i++)) do
+	docker service create \
+           --network=test_$i --name=nice_$i \
+           python:3.5 sleep 2000
+    done
+}
+
 $CMD
